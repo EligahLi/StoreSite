@@ -1,0 +1,35 @@
+<div class="jumbotron py-3">
+    <h1 class="display-4 text-center">Store Detail Regester</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <app-store-detail-form></app-store-detail-form>
+
+    </div>
+    <div class="col-md-6">
+        <span>list of store details</span>
+        <table class="table">
+            <thead class="thead-line">
+                <tr>
+                    <th>Store Name</th>
+                    <th>Store Address</th>
+                    <th>Store Work Time</th>
+                    <th>Store Items</th>>
+                    <th></th>>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pd of service.list">
+                    <td (click)="populateForm(pd)"> {{pd.storeName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.storeAddress}}</td>
+                    <td (click)="populateForm(pd)">{{pd.storeWorkTime}}</td>
+                    <td (click)="populateForm(pd)">{{pd.storeItems}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.storeDetailId)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

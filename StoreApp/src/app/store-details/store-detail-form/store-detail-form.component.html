@@ -1,0 +1,35 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onAdmit(form)">
+    <input type = "hidden" name = "storeDetailId">
+    <div class="form-group">
+        <label>STORE NAME</label>
+        <input class="form-control form-control-lg" placeholder="Store Name"
+        name="storeName" #storeName="ngModel" [(ngModel)]="service.formData.storeName"
+        required maxlength="20" minlength="3" [class.invalid]="storeName.invalid && storeName.touched">
+    </div>
+
+    <div class="form-group">
+        <label>STORE ADDRESS</label>
+        <input class="form-control form-control-lg" placeholder="Store exact address"
+        name="storeAddress" #storeAddress="ngModel" [(ngModel)]="service.formData.storeAddress"
+        required maxlength="100" minlength="3" [class.invalid]="storeAddress.invalid && storeAddress.touched">
+    </div>
+
+    <div class="form-group">
+        <label>STORE WORKTIME</label>
+        <input class="form-control form-control-lg" placeholder="work time pls"
+        name="storeWorkTime" #storeWorkTime="ngModel" [(ngModel)]="service.formData.storeWorkTime"
+        required maxlength="20" minlength="3" [class.invalid]="storeWorkTime.invalid && storeWorkTime.touched">
+    </div>
+
+    <div class="form-group">
+        <label>STORE ITEMS</label>
+        <input class="form-control form-control-lg" placeholder="What does your store has?"
+        name="storeItems" #storeItems="ngModel" [(ngModel)]="service.formData.storeItems"
+        required maxlength="100" minlength="3" [class.invalid]="storeItems.invalid && storeItems.touched">
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" [disabled]="form.invalid">ADMIT</button>
+    </div>
+    
+</form>
